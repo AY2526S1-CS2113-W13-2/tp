@@ -1,5 +1,3 @@
-![FlowCLI Cover](images/logos/FlowCLI-Cover-Image.png)
-
 # Developer Guide
 
 ---

@@ -55,7 +55,7 @@ FlowCLI addresses the challenge of managing complex academic or personal project
 
 ### Review/mentoring contributions
 
-- Reviewed and merged team member pull requests: [#74](https://github.com/AY2526S1-CS2113-W13-2/tp/pull/74), [#69](https://github.com/AY2526S1-CS2113-W13-2/tp/pull/69), [#51](https://github.com/AY2526S1-CS2113-W13-2/tp/pull/51)
+- Reviewed and merged team member pull requests for error handling and task management features
 - Provided guidance on interactive mode implementation and UML diagram standards
 - Assisted with merge conflict resolution and branch management
 
@@ -63,3 +63,31 @@ FlowCLI addresses the challenge of managing complex academic or personal project
 
 - Participated in class forum discussions on Java development best practices
 - Shared insights on PlantUML diagram creation and AB3 documentation standards
+
+## Key Commits and Pull Requests
+
+### Major Pull Requests:
+
+- **#74**: Developer guide updates with manual testing and UML diagrams
+- **#69**: Interactive mode implementation
+- **#51**: Full interactive mode feature with personality
+- **#19**: Sorting and filtering implementation
+- **#18**: Sorting & filtering feature
+- **#16**: Help command and error message improvements
+
+### Significant Commits:
+
+- Enhanced interactive mode error handling and user experience (53 lines changed)
+- Implemented comprehensive interactive mode for all commands (64 lines changed)
+- Added global task sorting and filtering (907 lines changed)
+- Added help command and improved error messages (723 lines changed)
+- Updated manual testing instructions (121 lines added)
+- Standardized UML diagram formatting across all diagrams
+
+## Tools and Technologies
+
+- **PlantUML**: Created professional UML diagrams for documentation
+- **JUnit**: Comprehensive test coverage for new features
+- **Git/GitHub**: Branch management, pull requests, and code reviews
+- **Checkstyle**: Maintained code quality standards
+- **Gradle**: Build system and dependency management

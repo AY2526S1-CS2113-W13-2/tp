@@ -1,5 +1,8 @@
 # Yao Xiang's Project Portfolio Page
-(Yxiang-828)
+
+![](../images/yxiang-828.png)
+
+**GitHub**: [Yxiang-828](https://github.com/Yxiang-828)
 
 ## Project: FlowCLI
 
@@ -41,7 +44,7 @@ FlowCLI addresses the challenge of managing complex academic or personal project
 
 - **Architecture Section**: Added detailed layered architecture explanation with interactive mode integration
 - **Implementation Section**: Documented sorting/filtering algorithms with complexity analysis, interactive mode implementation details with 4-layer breakdown
-- **UML Diagrams**: Created and maintained 16+ PlantUML diagrams including sequence diagrams, state diagrams, class diagrams, and activity diagrams
+- **UML Diagrams**: Created and maintained 14+ PlantUML diagrams including sequence diagrams, state diagrams, class diagrams, and activity diagrams
 - **Manual Testing**: Added comprehensive testing instructions with setup steps, sample data, and troubleshooting guide
 
 ### Contributions to team-based tasks
@@ -52,7 +55,7 @@ FlowCLI addresses the challenge of managing complex academic or personal project
 
 ### Review/mentoring contributions
 
-- Reviewed and merged team member pull requests for error handling and task management features
+- Reviewed and merged team member pull requests: [#74](https://github.com/AY2526S1-CS2113-W13-2/tp/pull/74), [#69](https://github.com/AY2526S1-CS2113-W13-2/tp/pull/69), [#51](https://github.com/AY2526S1-CS2113-W13-2/tp/pull/51)
 - Provided guidance on interactive mode implementation and UML diagram standards
 - Assisted with merge conflict resolution and branch management
 
@@ -60,31 +63,3 @@ FlowCLI addresses the challenge of managing complex academic or personal project
 
 - Participated in class forum discussions on Java development best practices
 - Shared insights on PlantUML diagram creation and AB3 documentation standards
-
-## Key Commits and Pull Requests
-
-### Major Pull Requests:
-
-- **#74**: Developer guide updates with manual testing and UML diagrams
-- **#69**: Interactive mode implementation
-- **#51**: Full interactive mode feature with personality
-- **#19**: Sorting and filtering implementation
-- **#18**: Sorting & filtering feature
-- **#16**: Help command and error message improvements
-
-### Significant Commits:
-
-- Enhanced interactive mode error handling and user experience (53 lines changed)
-- Implemented comprehensive interactive mode for all commands (64 lines changed)
-- Added global task sorting and filtering (907 lines changed)
-- Added help command and improved error messages (723 lines changed)
-- Updated manual testing instructions (121 lines added)
-- Standardized UML diagram formatting across all diagrams
-
-## Tools and Technologies
-
-- **PlantUML**: Created professional UML diagrams for documentation
-- **JUnit**: Comprehensive test coverage for new features
-- **Git/GitHub**: Branch management, pull requests, and code reviews
-- **Checkstyle**: Maintained code quality standards
-- **Gradle**: Build system and dependency management

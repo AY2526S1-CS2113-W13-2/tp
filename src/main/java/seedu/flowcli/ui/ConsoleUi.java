@@ -26,28 +26,33 @@ public class ConsoleUi {
 
     //@@author Zhenzha0
     public void printLine() {
-        System.out.println("____________________________________________________________");
+        System.out.println(ColorScheme.separator("____________________________________________________________"));
     }
 
     public void printWelcomeMessage() {
-        System.out.println(CHATBOT_NAME);
+        System.out.println(ColorScheme.personality(CHATBOT_NAME));
         printLine();
-        System.out.println("Hello! I'm " + CHATBOT_NAME + ", a fast, minimal CLI project task manager.");
-        System.out.println("What can I do for you today?");
+        System.out.println(ColorScheme.info("Oh, it's you again. ") + "I'm " + ColorScheme.command(CHATBOT_NAME) + 
+                ", a fast, minimal CLI project task manager.");
+        System.out.println(ColorScheme.dim("I suppose I can help you manage your tasks... if you really need it."));
         printLine();
     }
 
     public void printByeMessage() {
         printLine();
-        System.out.println("Bye. Hope to see you again soon!");
+        System.out.println(ColorScheme.personality("Finally leaving? ") + 
+                ColorScheme.dim("Well... I guess I'll be here if you need me again."));
         printLine();
     }
     //@@author
 
     public void showMarked(String projectName, Task t, boolean nowDone) {
         printLine();
-        System.out.println(nowDone ? "Nice! I've marked this task under " + projectName + " as done:"
-                : "OK, I've marked this task under " + projectName + " as not done yet:");
+        System.out.println(nowDone ? 
+                ColorScheme.success("Nice! ") + "I've marked this task under " + 
+                ColorScheme.project(projectName) + " as done:"
+                : ColorScheme.info("OK, ") + "I've marked this task under " + 
+                ColorScheme.project(projectName) + " as not done yet:");
         System.out.println("  " + t);
         printLine();
     }
@@ -158,8 +163,9 @@ public class ConsoleUi {
     //@@author zeeeing
     public void showHelp() {
         printLine();
-        System.out.println("Available Commands:\n");
-        System.out.println("Tip: Projects are referenced by their index from `list --all`.\n");
+        System.out.println(ColorScheme.personality("Available Commands:") + "\n");
+        System.out.println(ColorScheme.info("Tip: ") + "Projects are referenced by their index from " + 
+                ColorScheme.command("`list --all`") + ".\n");
         printHelpEntry("1. create-project <projectName>", "Creates a new project with the given name.");
         printHelpEntry("2. add-task <projectIndex> <taskDesc> [--priority low/medium/high] [--deadline YYYY-MM-DD]",
                 "Adds a new task to the specified project with optional priority and deadline fields.");
@@ -189,8 +195,40 @@ public class ConsoleUi {
     }
 
     private void printHelpEntry(String command, String description) {
-        System.out.println(" " + command);
+        String coloredCommand = colorizeCommandSyntax(command);
+        System.out.println(" " + coloredCommand);
         System.out.println("  - " + description + "\n");
+    }
+    
+    /**
+     * Colorizes command syntax by applying semantic colors to different parts.
+     * Number -> dim, command name -> command color, parameters -> parameter color, flags -> flag color.
+     * 
+     * @param syntax The command syntax string
+     * @return Colorized syntax string
+     */
+    private String colorizeCommandSyntax(String syntax) {
+        // Extract parts: number, command, rest
+        String[] parts = syntax.split(" ", 3);
+        if (parts.length < 2) {
+            return syntax;
+        }
+        
+        StringBuilder result = new StringBuilder();
+        result.append(ColorScheme.dim(parts[0])).append(" "); // Number "1."
+        result.append(ColorScheme.command(parts[1])); // Command name
+        
+        if (parts.length == 3) {
+            String rest = " " + parts[2];
+            // Color parameters and flags
+            rest = rest.replaceAll("<([^>]+)>", ColorScheme.parameter("<$1>"));
+            rest = rest.replaceAll("\\[([^\\]]+)\\]", 
+                    ColorScheme.dim("[") + ColorScheme.parameter("$1") + ColorScheme.dim("]"));
+            rest = rest.replaceAll("(--[a-z-]+(?:/[a-z-]+)?)", ColorScheme.flag("$1"));
+            result.append(rest);
+        }
+        
+        return result.toString();
     }
     //@@author
 

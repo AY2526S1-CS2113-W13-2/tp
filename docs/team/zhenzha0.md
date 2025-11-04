@@ -1,20 +1,3 @@
----
-header-includes: |
-  <style>
-  @media print {
-    img { display: none !important; }
-    h2 { margin-top: 0.5em; margin-bottom: 0.3em; }
-    h3 { margin-top: 0.8em; margin-bottom: 0.4em; }
-    h4 { margin-top: 0.4em; margin-bottom: 0.2em; }
-    p { margin-top: 0.15em; margin-bottom: 0.15em; }
-    ul { margin-top: 0.2em; margin-bottom: 0.2em; }
-    li { margin-top: 0.08em; margin-bottom: 0.08em; }
-    pre { margin-top: 0.3em; margin-bottom: 0.3em; }
-    hr { margin-top: 0.5em; margin-bottom: 0.5em; page-break-after: always; }
-  }
-  </style>
----
-
 # Yang Zhenzhao - Project Portfolio Page
 
 ## Overview

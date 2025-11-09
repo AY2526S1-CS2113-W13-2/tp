@@ -4,6 +4,7 @@ import seedu.flowcli.commands.core.CommandContext;
 import seedu.flowcli.parsers.ArgumentParser;
 import seedu.flowcli.parsers.CommandParser;
 import seedu.flowcli.project.Project;
+import seedu.flowcli.exceptions.TaskAlreadyUnmarkedException;
 
 import java.util.logging.Logger;
 
@@ -25,6 +26,10 @@ public class UnmarkCommand extends Command {
         logger.fine("Unmarking task in project: " + targetProject.getProjectName());
 
         Integer idx = CommandParser.parseIndexOrNull(parsedArgument.getRemainingArgument(), targetProject.size());
+
+        if (!targetProject.getProjectTasks().get(idx).isDone()) {
+            throw new TaskAlreadyUnmarkedException();
+        }
 
         targetProject.getProjectTasks().unmark(idx);
 
